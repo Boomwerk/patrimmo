@@ -1,0 +1,18 @@
+# Symfony
+backend/.env.local
+backend/.env.*.local
+backend/var/
+backend/vendor/
+backend/config/jwt/
+
+# React
+frontend/node_modules/
+frontend/dist/
+frontend/.env.local
+
+# Docker
+.docker/
+
+# OS
+.DS_Store
+Thumbs.db
