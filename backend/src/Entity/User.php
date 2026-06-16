@@ -68,6 +68,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(targetEntity: Tenant::class, mappedBy: 'owner', orphanRemoval: true)]
     private Collection $tenants;
 
+    #[ORM\Column(length: 100, nullable: true)]
+    private ?string $verificationToken = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?\DateTimeImmutable $verificationTokenAt = null;
+
     public function __construct()
     {
         $this->properties = new ArrayCollection();
@@ -308,6 +314,30 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
                 $tenant->setOwner(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getVerificationToken(): ?string
+    {
+        return $this->verificationToken;
+    }
+
+    public function setVerificationToken(?string $verificationToken): static
+    {
+        $this->verificationToken = $verificationToken;
+
+        return $this;
+    }
+
+    public function getVerificationTokenAt(): ?\DateTimeImmutable
+    {
+        return $this->verificationTokenAt;
+    }
+
+    public function setVerificationTokenAt(?\DateTimeImmutable $verificationTokenAt): static
+    {
+        $this->verificationTokenAt = $verificationTokenAt;
 
         return $this;
     }

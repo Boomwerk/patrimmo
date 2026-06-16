@@ -22,6 +22,7 @@ class UserService
     {
 
         $userexist = $this->userRepository->findOneBy(['email' => $dto->email]);
+        
         if($userexist !== null)
         {
             throw new \Exception("L'email est déjà utilisé.");
