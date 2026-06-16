@@ -13,3 +13,13 @@ controllers:
 api_login:
     path: /api/login
     methods: ['POST']
+
+api_refresh_token:
+    path: /api/token/refresh
+    methods: ['POST']
+    controller: gesdinet.jwtrefreshtoken.controller.refresh
+
+api_logout:
+    path: /api/logout
+    methods: [POST]
+    controller: gesdinet.jwtrefreshtoken.controller.invalidate
