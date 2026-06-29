@@ -1,4 +1,4 @@
-import { RegisterTest } from "./components/RegisterTest";
+import { RegisterForm } from "./components/RegisterForm";
 
 
 
@@ -12,7 +12,7 @@ const RegisterPage = () => {
                     <h1 className="text-3xl font-bold text-gray-900">Patrimo</h1>
                     <p className="mt-2 text-gray-600">Créez votre compte propriétaire</p>
                 </div>
-                <RegisterTest />
+                <RegisterForm />
                 <p className="mt-6 text-center text-sm text-gray-600">
                     Déjà un compte ?{' '}
                 <a href="/login" className="text-indigo-600 hover:underline font-medium">

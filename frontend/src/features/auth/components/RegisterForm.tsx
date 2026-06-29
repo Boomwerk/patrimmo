@@ -1,7 +1,8 @@
 import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
 import { registerSchema, type RegisterFormData } from '../schemas/registerSchema';
 import { useRegister } from '../hooks/useRegister';
+import { zodResolver } from '@hookform/resolvers/zod';
+
 
 export const RegisterForm = () => {
     const { mutate: register, isPending, isSuccess, isError } = useRegister();
@@ -30,7 +31,7 @@ export const RegisterForm = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+        <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-4">
 
             {isError && (
                 <div className="p-3 bg-red-50 text-red-600 rounded-lg text-sm">
