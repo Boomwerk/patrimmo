@@ -1,4 +1,5 @@
 import apiClient from '../../../lib/axios';
+import type { loginFormData } from '../schemas/loginSchema';
 import type { RegisterFormData } from '../schemas/registerSchema';
 
 interface RegisterResponse {
@@ -11,6 +12,11 @@ interface RegisterResponse {
     };
 }
 
+interface LoginResponse {
+    token: string;
+    refresh_token: string;
+}
+
 
 
 export const authService = {
@@ -18,5 +24,10 @@ export const authService = {
 
         const response = await apiClient.post<RegisterResponse>('/api/register', data);
         return response.data;
+    },
+
+    login: async (data: loginFormData): Promise<LoginResponse> => {
+        const response = await apiClient.post<LoginResponse>('/api/login', data);
+        return response.data
     }
 }
