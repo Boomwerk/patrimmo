@@ -1,5 +1,7 @@
+import { Link } from 'react-router-dom';
 import building from '../../../assets/login/building-facade.png';
 import { LoginForm } from '../components/LoginForm';
+
 
 
 export const LoginPage = () => {
@@ -38,7 +40,11 @@ export const LoginPage = () => {
                 <hr />
 
                 <LoginForm/>
+
+                <p className='text-[#434652] text-center'>Pas de compte ? <Link to="/inscription" className='text-blue-600 font-bold'>S'inscrire</Link></p>
             </div>
+
+
 
         </div>
     )
