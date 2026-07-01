@@ -2,7 +2,7 @@ import { RegisterForm } from "../components/RegisterForm";
 import regiserbg from "../../../assets/register/bg-register.jpeg";
 import { Link } from "react-router-dom";
 import certified from "../../../assets/register/certified.png";
-import joris from "../../../assets/register/joris.jpg";
+import joris from "../../../assets/register/joris.png";
 
 const RegisterPage = () => {
 
