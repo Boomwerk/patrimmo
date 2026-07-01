@@ -43,7 +43,7 @@ export const RegisterForm = () => {
                 <label className="block text-sm font-medium text-gray-700">Prénom</label>
                 <input
                     {...registerField('firstName')}
-                    className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-[#DEE3E8]"
                     placeholder="John"
                 />
                 {errors.firstName && (
@@ -55,7 +55,7 @@ export const RegisterForm = () => {
                 <label className="block text-sm font-medium text-gray-700">Nom</label>
                 <input
                     {...registerField('lastName')}
-                    className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-[#DEE3E8]"
                     placeholder="Doe"
                 />
                 {errors.lastName && (
@@ -68,7 +68,7 @@ export const RegisterForm = () => {
                 <input
                     {...registerField('email')}
                     type="email"
-                    className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-[#DEE3E8]"
                     placeholder="john@exemple.fr"
                 />
                 {errors.email && (
@@ -81,7 +81,7 @@ export const RegisterForm = () => {
                 <input
                     {...registerField('phone')}
                     type="tel"
-                    className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-[#DEE3E8]"
                     placeholder="06 12 34 56 78"
                 />
             </div>
@@ -91,7 +91,7 @@ export const RegisterForm = () => {
                 <input
                     {...registerField('password')}
                     type="password"
-                    className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-[#DEE3E8]"
                     placeholder="••••••••"
                 />
                 {errors.password && (
@@ -102,7 +102,7 @@ export const RegisterForm = () => {
             <button
                 type="submit"
                 disabled={isPending}
-                className="w-full py-2 px-4 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                className="w-full py-2 px-4 bg-[#19355C] text-white font-medium rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
                 {isPending ? 'Création en cours...' : 'Créer mon compte'}
             </button>

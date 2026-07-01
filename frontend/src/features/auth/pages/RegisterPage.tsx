@@ -1,26 +1,62 @@
 import { RegisterForm } from "../components/RegisterForm";
-
-
+import regiserbg from "../../../assets/register/bg-register.jpeg";
+import { Link } from "react-router-dom";
+import certified from "../../../assets/register/certified.png";
+import joris from "../../../assets/register/joris.jpg";
 
 const RegisterPage = () => {
 
 
     return (
-        <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-            <div className="bg-white p-8 rounded-xl shadow-sm w-full max-w-md">
-                <div className="mb-8 text-center">
-                    <h1 className="text-3xl font-bold text-gray-900">Patrimo</h1>
-                    <p className="mt-2 text-gray-600">Créez votre compte propriétaire</p>
+        <div className="flex wrap">
+            <div className="w-1/2 py-10 px-[180px] h-screen ">
+                <div className="flex justify-between">
+                    <p className='font-bold font-sans text-[20px] text-[#19355C]'>PATRIMMO</p>
+                    <p className="text-sm text-[#19355C]"> J'ai déjà un compte - <Link to="/connexion" className="font-bold ">Se connecter</Link></p>
+
                 </div>
+
+                <div className="my-10">    
+                    <h1 className="text-[50px] text-bold font-bold font-sans text-[#19355C]">Pilotez votre patrimoine.</h1>
+                    <p className="font-sans text-[30px]">Gérez votre patrimoine immobilier avec précision et confiance.</p>
+                </div>
+
+
                 <RegisterForm />
-                <p className="mt-6 text-center text-sm text-gray-600">
-                    Déjà un compte ?{' '}
-                <a href="/login" className="text-indigo-600 hover:underline font-medium">
-                    Se connecter
-                </a>
-                </p>
+
+                <p className="text-sm text-[#434652] mt-5 text-center">En vous inscrivant, vous acceptez nos <Link to="/conditions-d-utilisation">Conditions d'utilisation</Link> et notre <Link to="/politique-de-confidentialite">Politique de confidentialité.</Link></p>
+                
+                
+                
             </div>
+            <div className="w-1/2 bg-cover h-screen bg-cover bg-center bg-no-repeat flex justify-center items-end" style={{backgroundImage: `url(${regiserbg})`}}>
+            
+                <div className="w-2/3 bg-[#C7C7C9] p-5 rounded my-10">
+                    <div className="flex align-center justify-start gap-3 px-5 py-3 w-full">
+                        <img src={certified} alt="" className="w-[25px]"/>
+                        <p className="font-bold ">Utilisateur Certifié</p>
+                    </div>
+
+                    <p className="text-xl px-5 italic">
+                        "Patrimmo ne se limite pas à un tableau de bord : il vous offre une gestion claire, centralisée et sereine de votre patrimoine immobilier."
+                    </p>
+
+
+                    <div className="mt-5 flex">
+                        <div className="px-5">
+                            <img src={joris} alt="" className="w-[50px] rounded" />
+                        </div>
+                        <div>
+                            <p className="font-bold text-sm">Joris Aouachria</p>
+                            <p className="text-sm">Directeur, Manager, Firas Immobilier</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
+        
 
 
     )
