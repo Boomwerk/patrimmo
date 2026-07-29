@@ -15,6 +15,7 @@ use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
+use App\Entity\User;
 
 final class AuthController extends AbstractController
 {
@@ -107,6 +108,26 @@ final class AuthController extends AbstractController
 
         return $this->json(["message" => 'Email vérifié avec succès.'], Response::HTTP_OK);
 
+
+    }
+
+    #[Route("/api/me", name:"api_me", methods:["GET"])]
+    public function me()  
+    {
+        $user = $this->getUser();
+
+        if(!$user instanceof User){
+            return $this->json(["error" => "Non authentifié"], Response::HTTP_UNAUTHORIZED);
+        }
+
+        return $this->json([
+            "id" => $user->getId(),
+            "email" => $user->getEmail(),
+            "fistName" => $user->getFirstname(),
+            "lastName" => $user->getLastName(),
+            'roles' => $user->getRoles()
+
+        ]);
 
     }
 }
