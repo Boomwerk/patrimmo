@@ -17,6 +17,14 @@ interface LoginResponse {
     refresh_token: string;
 }
 
+interface MeResponse  {
+    id: string;
+    email: string;
+    lastName: string;
+    firstName: string;
+    roles: string[];
+}
+
 
 
 export const authService = {
@@ -29,5 +37,10 @@ export const authService = {
     login: async (data: loginFormData): Promise<LoginResponse> => {
         const response = await apiClient.post<LoginResponse>('/api/login', data);
         return response.data
+    },
+
+    me: async(): Promise<MeResponse> => {
+        const response = await apiClient.get<MeResponse>("/api/me");
+        return response.data;
     }
 }
