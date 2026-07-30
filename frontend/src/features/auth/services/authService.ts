@@ -43,4 +43,5 @@ export const authService = {
         const response = await apiClient.get<MeResponse>("/api/me");
         return response.data;
     }
+    
 }
