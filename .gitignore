@@ -9,6 +9,7 @@ backend/config/jwt/
 frontend/node_modules/
 frontend/dist/
 frontend/.env.local
+frontend/.env
 
 # Docker
 .docker/
@@ -16,3 +17,5 @@ frontend/.env.local
 # OS
 .DS_Store
 Thumbs.db
+
+.vscode/
