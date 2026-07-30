@@ -1,7 +1,7 @@
-import { Navigate } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 import { useAuthStore } from "../stores/authStore";
 
-const PublicRoute = ({children}: {children: React.ReactNode}) => {
+const PublicRoute = () => {
 
     const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
 
@@ -9,7 +9,7 @@ const PublicRoute = ({children}: {children: React.ReactNode}) => {
         return <Navigate to="/tableau-de-bord" replace/>
     }
 
-    return <>{children}</>
+    return <Outlet/>
 }
 
 export default PublicRoute;
