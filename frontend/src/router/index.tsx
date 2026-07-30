@@ -4,20 +4,39 @@ import { LoginPage } from "../features/auth/pages/LoginPage";
 import DashboardPage from "../features/dashboard/pages/DashboardPage";
 import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
-
+import { PrivateLayout } from "../layouts/PrivateLayout";
 
 export const router = createBrowserRouter([
+
     {
-        path: "/inscription",
-        element: <PublicRoute> <RegisterPage /> </PublicRoute> 
+        element: <PrivateRoute />,
+        children: [
+            {
+                element: <PrivateLayout />,
+                children: [
+                    
+                    {
+                        path: "tableau-de-bord",
+                        element: <DashboardPage/>
+                    },
+                ]
+            }
+        ]
     },
     {
-        path: "/connexion",
-        element: <PublicRoute><LoginPage /></PublicRoute>
-    },
-    {
-        path: "/tableau-de-bord",
-        element: <PrivateRoute><DashboardPage/></PrivateRoute>
-    },
+        element: <PublicRoute />,
+        children: [
+            {
+                path: "inscription",
+                element: <RegisterPage />
+            },
+            {
+                path: "connexion",
+                element: <LoginPage />
+            }
+            
+        ]
+    }
+    
     
 ])
