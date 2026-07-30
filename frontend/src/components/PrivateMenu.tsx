@@ -1,5 +1,5 @@
-import { IoIosLogOut } from "react-icons/io";
 import { IoSettingsOutline } from "react-icons/io5";
+import { LogoutButton } from "../features/auth/components/LogoutButton";
 
 
 
@@ -26,7 +26,7 @@ export const PrivateMenu = () => {
                         </div>
                         <ul className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                             <li><a><IoSettingsOutline />  Paramètre</a></li>
-                            <li><a className="bg-error"> <IoIosLogOut /> Déconnexion</a></li>
+                            <li><LogoutButton /></li>
                         </ul>
                     </div>
                 </div>
