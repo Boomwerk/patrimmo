@@ -3,6 +3,7 @@
 namespace App\Tests\Service;
 
 use App\DTO\RegisterRequestDTO;
+use App\DTO\UpdateUserDTO;
 use App\Entity\User;
 use App\Repository\UserRepository;
 use App\Service\UserService;
@@ -144,6 +145,35 @@ class UserServiceTest extends TestCase
         $this->assertNotEquals('plainpassword', $user->getPassword());
         $this->assertEquals('super_hashed_password', $user->getPassword());
 
+    }
+
+
+    public function testUpdateUserFailed()
+    {
+        $dto = new UpdateUserDTO();
+        $dto->firstName = "Prénom";
+        $dto->lastName = "NomDeFamille";
+        $dto->email = "Test@test.com";
+        $dto->phone="+33617682895";
+
+        $user = new User();
+        $user->setFirstName("Prénom");
+        $user->setLastName("NomDeFamille");
+        $user->setEmail("Test@failed.com");
+        $user->setPhone("+33617682895");
+
+        $existUser = new User();
+        $existUser->setEmail("Test@test.com");
+
+
+        $this->userRepository->expects($this->once())->method('findOneBy')->willReturn($existUser);
+
+        
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage("Vous ne pouvez pas utilisé cette email");
+        
+        $this->userService->updateUser($user,$dto);
+        
     }
 
 }
