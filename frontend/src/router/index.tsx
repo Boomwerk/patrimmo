@@ -5,6 +5,9 @@ import DashboardPage from "../features/dashboard/pages/DashboardPage";
 import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
 import { PrivateLayout } from "../layouts/PrivateLayout";
+import { UserSettingsPage } from "../features/userSettings/pages/UserSettingsPage";
+import { ProfilSetting } from "../features/userSettings/pages/ProfileSetting";
+import { PasswordSetting } from "../features/userSettings/pages/PasswordSetting";
 
 export const router = createBrowserRouter([
 
@@ -18,6 +21,21 @@ export const router = createBrowserRouter([
                     {
                         path: "tableau-de-bord",
                         element: <DashboardPage/>
+                    },
+                     {
+                        path: "parametres",
+                        element: <UserSettingsPage/>,
+                        children: [
+                            
+                            {
+                                index:true,
+                                element: <ProfilSetting />
+                            },
+                            {
+                                path:"mot-de-passe",
+                                element: <PasswordSetting />
+                            }
+                        ]
                     },
                 ]
             }

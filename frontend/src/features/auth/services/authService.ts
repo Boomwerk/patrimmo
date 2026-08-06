@@ -22,6 +22,7 @@ interface MeResponse  {
     email: string;
     lastName: string;
     firstName: string;
+    phone: string | null;
     roles: string[];
 }
 

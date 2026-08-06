@@ -32,7 +32,7 @@ export const LoginForm = () => {
     return (
         <form action="" className="py-10" noValidate onSubmit={handleSubmit(onLogin)}>
             {isError && (
-                <div className="p-3 bg-red-50 text-red-600 rounded-lg text-sm">
+                <div className="p-3 my-5 bg-red-50 text-red-600 rounded-lg text-sm">
                     {isAxiosError(error) && error.response?.status === 401? 'Email ou mot de passe incorrect.': 'Une erreur est survenue, veuillez réessayer.'}
                     
                 </div>
