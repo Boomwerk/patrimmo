@@ -9,6 +9,8 @@ import { UserSettingsPage } from "../features/userSettings/pages/UserSettingsPag
 import { ProfilSetting } from "../features/userSettings/pages/ProfileSetting";
 import { PasswordSetting } from "../features/userSettings/pages/PasswordSetting";
 import { HomePage } from "../features/home/pages/HomePage";
+import { AddPropertyPage } from "../features/properties/pages/AddPropertyPage";
+import { PropertiesListPage } from "../features/properties/pages/PropertiesListPage";
 
 export const router = createBrowserRouter([
 
@@ -26,6 +28,14 @@ export const router = createBrowserRouter([
                     {
                         path: "tableau-de-bord",
                         element: <DashboardPage/>
+                    },
+                    {
+                        path: "biens",
+                        element: <PropertiesListPage/>
+                    },
+                    {
+                        path: "biens/ajouter",
+                        element: <AddPropertyPage/>
                     },
                      {
                         path: "parametres",
