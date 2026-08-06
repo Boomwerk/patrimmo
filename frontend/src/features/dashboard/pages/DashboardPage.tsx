@@ -5,7 +5,7 @@ const DashboardPage = () => {
 
     
     return (
-        <div className="w-full h-screen bg-base-300 px-20 py-10">
+        <div className="w-full min-h-screen bg-base-300 px-4 sm:px-10 lg:px-20 py-10">
 
             <div className="flex flex-col gap-3">
                 

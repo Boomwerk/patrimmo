@@ -55,12 +55,12 @@ export const Pricing = () => {
                             key={plan.name}
                             className={
                                 plan.highlighted
-                                    ? "rounded-2xl bg-[#19355C] p-8 shadow-xl sm:-translate-y-4 relative"
+                                    ? "rounded-2xl bg-[#19355C] p-8 pt-10 shadow-xl sm:-translate-y-4 relative mt-4 sm:mt-0"
                                     : "rounded-2xl bg-white border border-[#DEE3E8] p-8"
                             }
                         >
                             {plan.highlighted && (
-                                <span className="absolute -top-3 left-1/2 -translate-x-1/2 badge bg-[#9FF5C1] text-[#19355C] border-none font-semibold text-xs px-3">
+                                <span className="absolute -top-3 left-1/2 -translate-x-1/2 badge bg-[#9FF5C1] text-[#19355C] border-none font-semibold text-xs px-3 whitespace-nowrap">
                                     RECOMMANDÉ
                                 </span>
                             )}

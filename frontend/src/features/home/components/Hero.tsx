@@ -53,20 +53,20 @@ export const Hero = () => {
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.7, delay: 0.2 }}
-                        className="relative"
+                        className="relative mb-10 lg:mb-0"
                     >
-                        <div className="absolute -inset-x-4 -inset-y-4 rounded-4xl border border-[#DEE3E8] rotate-3" />
+                        <div className="absolute -inset-x-2 -inset-y-2 sm:-inset-x-4 sm:-inset-y-4 rounded-4xl border border-[#DEE3E8] rotate-3" />
                         <img
                             src={heroSkyline}
                             alt="Immeubles modernes gérés avec PATRIMMO"
-                            className="relative rounded-3xl shadow-2xl w-full h-105 object-cover rotate-2"
+                            className="relative rounded-3xl shadow-2xl w-full h-72 sm:h-88 lg:h-105 object-cover rotate-2"
                         />
 
                         <motion.div
                             initial={{ opacity: 0, y: 16 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.5 }}
-                            className="absolute -bottom-8 -left-8 bg-white rounded-2xl shadow-xl px-5 py-4 w-56"
+                            className="absolute -bottom-6 left-2 sm:-bottom-8 sm:-left-8 bg-white rounded-2xl shadow-xl px-5 py-4 w-48 sm:w-56"
                         >
                             <div className="flex items-center gap-2 text-xs text-[#434652] font-medium">
                                 <RiBarChart2Line className="text-[#19355C]" />
