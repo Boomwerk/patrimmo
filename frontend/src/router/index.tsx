@@ -8,9 +8,14 @@ import { PrivateLayout } from "../layouts/PrivateLayout";
 import { UserSettingsPage } from "../features/userSettings/pages/UserSettingsPage";
 import { ProfilSetting } from "../features/userSettings/pages/ProfileSetting";
 import { PasswordSetting } from "../features/userSettings/pages/PasswordSetting";
+import { HomePage } from "../features/home/pages/HomePage";
 
 export const router = createBrowserRouter([
 
+    {
+        path: "/",
+        element: <HomePage />
+    },
     {
         element: <PrivateRoute />,
         children: [
