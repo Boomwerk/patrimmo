@@ -1,6 +1,7 @@
 import { MdOutlineDashboard, MdOutlineSupport } from "react-icons/md";
 import { FaRegBuilding, FaUsers, FaRegFileAlt } from "react-icons/fa";
 import { IoSettingsOutline } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 export const PrivateSidebar = () => {
     return (
@@ -16,7 +17,7 @@ export const PrivateSidebar = () => {
                 </div>
 
                 <div>
-                    <a href="" className="flex items-center gap-2 hover:bg-base-200 rounded p-2"><FaRegBuilding /> Propriétés</a>
+                    <Link to="/biens" className="flex items-center gap-2 hover:bg-base-200 rounded p-2"><FaRegBuilding /> Propriétés</Link>
                 </div>
 
                 <div>
