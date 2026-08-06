@@ -12,13 +12,13 @@ export const LoginPage = () => {
 
 
     return (
-        <div className="flex h-screen size-full">
+        <div className="flex flex-col lg:flex-row min-h-screen size-full">
 
-            <div className="h-full w-1/2 p-20 bg-cover bg-center bg-no-repeat flex flex-col justify-between" style={{backgroundImage: `url(${building})`}}>
+            <div className="hidden lg:flex lg:w-1/2 p-10 lg:p-20 bg-cover bg-center bg-no-repeat flex-col justify-between" style={{backgroundImage: `url(${building})`}}>
                 <p className='font-bold font-sans text-[25px] text-[#A3BDEC]'>PATRIMMO</p>
 
                 <div>
-                    <h1 className='text-white text-[40px] py-3 font-bold'>L'outil indispensable du propriétaire moderne</h1>
+                    <h1 className='text-white text-3xl xl:text-[40px] py-3 font-bold'>L'outil indispensable du propriétaire moderne</h1>
                     <hr className='w-20 bg-[#9FF5C1] h-1 my-5' />
                     <p className='text-[#A3BDEC]'>Accédez à votre espace privé. Pilotez votre patrimoine immobilier avec la précision d'un professionnel et la sérénité d'une plateforme conçue pour les propriétaires exigeants.</p>
                 </div>
@@ -30,7 +30,7 @@ export const LoginPage = () => {
                 </div>
 
             </div>
-            <div className="w-1/2 p-20">
+            <div className="w-full lg:w-1/2 p-6 sm:p-10 lg:p-20 flex flex-col justify-center">
                 <div className='py-10'>
 
                     <h2 className='font-bold text-[25px] text-[#19355C]'>Heureux de vous revoir !</h2>

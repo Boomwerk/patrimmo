@@ -43,38 +43,38 @@ export const ProfileForm = () => {
         <form className="" onSubmit={handleSubmit(onSubmit)} noValidate>
 
             <div className="flex flex-col">
-                <div className="flex justify-between items-center px-10 pb-5">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 px-4 sm:px-10 pb-5">
                     <div className="flex flex-col">
                         <p className=" font-bold">Information Personnel</p>
                         <p className="text-xs text-black/30">Mettez a jours vos informations personnels ainsi que votre photo ici </p>
 
                     </div>
-                    <button type="submit" disabled={isPending} className="btn btn-primary btn-lg">
+                    <button type="submit" disabled={isPending} className="btn btn-primary btn-lg w-full sm:w-auto">
                         {isPending ? "Enregistrement..." : "Sauvegarder les changements"}
                     </button>
                 </div>
 
                 {isSuccess && (
-                    <p className="px-10 text-success text-sm mb-3">Vos informations ont été mises à jour.</p>
+                    <p className="px-4 sm:px-10 text-success text-sm mb-3">Vos informations ont été mises à jour.</p>
                 )}
                 {isError && (
-                    <p className="px-10 text-error text-sm mb-3">{getErrorMessage(error, "Une erreur est survenue, veuillez réessayer.")}</p>
+                    <p className="px-4 sm:px-10 text-error text-sm mb-3">{getErrorMessage(error, "Une erreur est survenue, veuillez réessayer.")}</p>
                 )}
 
                 <hr className="text-base-100 my-5"/>
 
-                <div className="flex justify-between items-center px-10">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 px-4 sm:px-10">
 
 
                     <p className="font-bold">Nom / Prénom</p>
 
                     <div className="flex flex-col gap-1">
-                        <div className="flex flex-row gap-10 mt-5">
-                            <fieldset className="fieldset w-120">
+                        <div className="flex flex-col sm:flex-row gap-4 sm:gap-10 sm:mt-5">
+                            <fieldset className="fieldset w-full sm:w-56 lg:w-72">
                                 <input type="text" className="input w-full" placeholder="Prénom" {...register("firstName")} />
                                 {errors.firstName && <p className="text-error text-xs">{errors.firstName.message}</p>}
                             </fieldset>
-                            <fieldset className="fieldset w-120">
+                            <fieldset className="fieldset w-full sm:w-56 lg:w-72">
                                 <input type="text" className="input w-full" placeholder="Nom" {...register("lastName")} />
                                 {errors.lastName && <p className="text-error text-xs">{errors.lastName.message}</p>}
                             </fieldset>
@@ -85,12 +85,12 @@ export const ProfileForm = () => {
                 <hr className="text-base-100 my-5"/>
 
 
-                <div className="my-5 flex justify-between items-center px-10">
+                <div className="my-5 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 px-4 sm:px-10">
 
                     <p  className="font-bold">Email</p>
 
-                    <div className="flex flex-col gap-1">
-                        <label className="input validator w-250">
+                    <div className="flex flex-col gap-1 w-full sm:w-auto">
+                        <label className="input validator w-full sm:w-96">
                             <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <g
                                 strokeLinejoin="round"
@@ -111,11 +111,11 @@ export const ProfileForm = () => {
 
                 <hr className="text-base-100 my-5" />
 
-                <div className="flex justify-between items-center px-10">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 px-4 sm:px-10">
                     <p  className="font-bold">Téléphone (Optionnel)</p>
 
-                    <div className="flex flex-col gap-1">
-                        <label className="input validator w-250 ">
+                    <div className="flex flex-col gap-1 w-full sm:w-auto">
+                        <label className="input validator w-full sm:w-96">
                             <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                             <g fill="none">
                                 <path
