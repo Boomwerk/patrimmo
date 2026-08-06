@@ -4,7 +4,7 @@ namespace App\Service;
 
 use App\DTO\RegisterRequestDTO;
 use App\DTO\UpdatePasswordUserDTO;
-use APP\DTO\UpdateUserDTO;
+use App\DTO\UpdateUserDTO;
 use App\Entity\User;
 use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;

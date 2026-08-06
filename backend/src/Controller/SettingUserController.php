@@ -3,11 +3,12 @@
 namespace App\Controller;
 
 use App\DTO\UpdatePasswordUserDTO;
-use APP\DTO\UpdateUserDTO;
+use App\DTO\UpdateUserDTO;
 use App\Entity\User;
 use App\Repository\UserRepository;
 use App\Service\UserService;
 use Exception;
+use Lexik\Bundle\JWTAuthenticationBundle\Services\JWTTokenManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -22,7 +23,8 @@ class SettingUserController extends AbstractController {
     public function __construct(
         private SerializerInterface $serializer,
         private ValidatorInterface $validator,
-        private UserService $userService
+        private UserService $userService,
+        private JWTTokenManagerInterface $jwtManager
     ){}
 
     #[Route("/api/me", name:"api-me-update", methods:["PATCH"])]
@@ -58,7 +60,10 @@ class SettingUserController extends AbstractController {
         }
 
 
-        return $this->json(null, Response::HTTP_NO_CONTENT);
+        return $this->json([
+            "message" => "Modification réussi",
+            "token" => $this->jwtManager->create($user),
+        ], Response::HTTP_OK);
 
     }
 
@@ -98,8 +103,8 @@ class SettingUserController extends AbstractController {
         }
 
 
- 
-        return $this->json(null, Response::HTTP_NO_CONTENT);
+
+        return $this->json(["message" => "Mot de passe modifié avec succès."], Response::HTTP_OK);
 
     }
 

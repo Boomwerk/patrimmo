@@ -9,7 +9,7 @@ const apiClient = axios.create({
 })
 
 apiClient.interceptors.request.use((config) => {
-    const token = localStorage.getItem('token');
+    const token = useAuthStore.getState().token;
 
     if(token){
         config.headers.Authorization = `Bearer ${token}`;
@@ -23,9 +23,11 @@ apiClient.interceptors.response.use(
     async (error) => {
 
         const originalRequest = error.config;
-       
 
-        if(error.response?.status === 401 && !originalRequest._retry){
+        const isAuthRequest = originalRequest?.url?.includes("/api/login")
+            || originalRequest?.url?.includes("/api/token/refresh");
+
+        if(error.response?.status === 401 && !isAuthRequest && !originalRequest._retry){
             originalRequest._retry=true; 
             
             const refreshToken = useAuthStore.getState().refreshToken;
@@ -55,7 +57,8 @@ apiClient.interceptors.response.use(
             }
         }
 
-    } 
+        return Promise.reject(error);
+    }
 )
 
 export default apiClient;
